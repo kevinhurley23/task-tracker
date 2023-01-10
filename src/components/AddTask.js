@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const AddTask = ({ onAdd }) => {
+const AddTask = ({ createTask, tasks }) => {
   const [text, setText] = useState("");
   const [day, setDay] = useState("");
   const [reminder, setReminder] = useState(false);
@@ -14,7 +14,7 @@ const AddTask = ({ onAdd }) => {
       return;
     }
 
-    onAdd({ text, day, reminder });
+    createTask({ text, day, reminder });
 
     setText("");
     setDay("");
